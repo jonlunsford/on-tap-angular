@@ -1,0 +1,68 @@
+/* /////////////////////////////////////////////////////
+
+MODULES
+// Use class names for all modules
+// Use class names for all non-semantic children (divs, spans, etc). 
+// Child class names prefixed by module name (ex: news-item-title)
+// Keep nesting to a minimum
+// Put a comment description before each module
+
+///////////////////////////////////////////////////// */
+
+.main-input {
+  @include span-columns(12, 12);
+  margin: 15px  0 !important;
+  display: inline-block;
+}
+
+.topcoat-list__item {
+  overflow: hidden;
+}
+
+.list-item-left {
+  @include span-columns(2, 12);
+}
+
+.list-item-right {
+  @include span-columns(9, 12);
+}
+
+.topcoat-tab-bar {
+  position: fixed;
+  bottom: 0;
+}
+
+.fa-beer {
+  font-size: 42px;
+  height: 37px;
+  width: 44px;
+  right: 3px;
+  color: #ACACAC;
+
+  &.active,
+  &:active {
+    color: #81CF84;
+  }
+}
+
+.topcoat-navigation-bar {
+  position: fixed;
+  width: 100%;
+}
+
+.header-control-left {
+  position: absolute;
+  top: 19px;
+  font-size: 25px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.inline-list {
+  color: #8A8383;
+  overflow: hidden;
+  li {
+    margin-right: 10px;
+    float: left;
+  }
+}

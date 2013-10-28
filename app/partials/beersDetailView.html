@@ -1,0 +1,31 @@
+<div class="content-panel" ng-controller="beersDetailController">
+  <div class="topcoat-navigation-bar">
+    <div class="header-control-left" ng-tap="$navigate.back()">
+      <i class="fa fa-arrow-circle-left"></i>
+    </div>
+    <div class="topcoat-navigation-bar__item center full">
+      <h1 class="topcoat-navigation-bar__title">{{beer.name}}</h1>
+    </div>
+  </div>
+
+    <div class="view">
+      <div class="banner">
+        <img src="http://placehold.it/750x350/cccccc/333333" alt="">
+      </div>
+      <h2>About the Beer</h2>
+      <ul class="inline-list">
+        <li><span class="small">ABV</span> 4.7%</li>
+        <li><span class="small">KBU</span> 120</li>
+        <li>Year Round</li>
+      </ul>
+      <p>Suggested class: Pint</p>
+      <p>{{beer.description}}</p>
+      <h2>About the Style</h2>
+      <p>Hoodie malesuada tellus at proin molestie enim ligula ultricies San Francisco lectus diam molestie amet vulputate ut auctor ipsum fixie. Et morbi at sit lorem leo enim non vinyl arcu auctor quisque lectus nulla mattis rutrum congue. Tofu diam sit congue nam mattis urna magna duis brunch adipiscing nec sed amet gravida. Integer quam maecenas beard ut a sapien nibh urna ligula duis at mustache congue massa ut nam sagittis nulla.</p>
+<!--       <button class="topcoat-icon-button--large">
+        <span class="topcoat-icon--large fa fa-beer" ng:class="setClass(beer.on_tap)"></span>
+      </button>
+ -->    </div>
+
+
+</div>

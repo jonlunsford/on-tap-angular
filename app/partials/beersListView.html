@@ -1,0 +1,22 @@
+<div class="content-panel">
+  <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+      <h1 class="topcoat-navigation-bar__title">Beers</h1>
+    </div>
+  </div>
+
+  <div class="topcoat-list list-view">
+    <h1 class="topcoat-list__header">On Tap</h1>
+
+    <ul class="topcoat-list__container" ng-controller="beersListController">
+      <li class="topcoat-list__item" ng-repeat="beer in beers" ng-tap="$navigate.go('/beers/{{beer.id}}', 'slide')">
+        <h2>{{beer.name}}</h2>
+        <ul class="inline-list">
+          <li><span class="small">ABV</span> 4.7%</li>
+          <li><span class="small">KBU</span> 120</li>
+          <li>Year Round</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
