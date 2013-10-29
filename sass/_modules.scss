@@ -16,7 +16,12 @@ MODULES
 }
 
 .topcoat-list__item {
+  cursor: pointer;
   overflow: hidden;
+
+  &:active {
+    background: #C5C5C5;
+  }
 }
 
 .list-item-left {
@@ -64,5 +69,15 @@ MODULES
   li {
     margin-right: 10px;
     float: left;
+  }
+}
+
+.inner-content {
+
+  .fa-refresh.fa-spin {
+    position: absolute;
+    top: 31px;
+    right: 27px;
+    color: #CCCBCB;
   }
 }

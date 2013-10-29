@@ -62,7 +62,8 @@ em { font-style: italic; }
 
 .main-input { width: 100%; float: left; margin-right: 2.12766%; display: inline; margin: 15px  0 !important; display: inline-block; }
 
-.topcoat-list__item { overflow: hidden; }
+.topcoat-list__item { cursor: pointer; overflow: hidden; }
+.topcoat-list__item:active { background: #C5C5C5; }
 
 .list-item-left { width: 14.89362%; float: left; margin-right: 2.12766%; display: inline; }
 
@@ -79,6 +80,8 @@ em { font-style: italic; }
 
 .inline-list { color: #8A8383; overflow: hidden; }
 .inline-list li { margin-right: 10px; float: left; }
+
+.inner-content .fa-refresh.fa-spin { position: absolute; top: 31px; right: 27px; color: #CCCBCB; }
 
 /* Home page
 --------------------------------------------- */
@@ -2496,10 +2499,14 @@ Everything below this line should be calculated using the variables above. This 
 
 .fa-turkish-lira:before, .fa-try:before { content: "\f195"; }
 
+.ng-hide-add { display: none; }
+
+.ng-hide-remove { display: block !important; }
+
 .content-panel { *zoom: 1; padding-left: 0px; padding-right: 0px; margin-left: auto; margin-right: auto; padding: 0 0 30px 0; }
 .content-panel:after { content: ""; display: table; clear: both; }
 
-.inner-content { padding: 0 15px; }
+.inner-content { position: relative; overflow: hidden; padding: 0 15px; }
 
 .view { padding: 84px 15px 15px 15px; }
 

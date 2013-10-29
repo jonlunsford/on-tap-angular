@@ -7,13 +7,27 @@
 <div ng-controller="searchController" class="list-view">
 
   <div class="inner-content">
-    <input type="search" value="" placeholder="Type a brewery name" class="topcoat-search-input main-input" ng-model="searchTerm" ng-keyup="search(searchTerm)">
+    <input type="search" value="" placeholder="Type a brewery or beer name" class="topcoat-search-input main-input" ng-model="searchTerm">
+    <i class="fa fa-refresh fa-spin" ng-show="isSearching"></i>
   </div>
 
   <ul class="topcoat-list__container">
-    <li class="topcoat-list__item" ng-repeat="result in searchResults | filter:searchTerm">
-      <h2>{{result.name}}</h2>
-      <p>{{result.description|truncate:120}}</p>
+    <li class="topcoat-list__item" ng-repeat="result in searchResults">
+      
+      <div ng-if="result.type === 'brewery'">
+        <a ng-tap="$navigate.go('/breweries/{{result.id}}/beers', 'slide')">
+          <h2>{{result.name}}</h2>
+          <p>{{result.description|truncate:120}}</p>
+        </a>
+      </div>
+
+      <div ng-if="result.type === 'beer'">
+        <a ng-tap="$navigate.go('/beer/{{result.id}}', 'slide')">
+          <h2>{{result.name}}</h2>
+          <p>{{result.description|truncate:120}}</p>
+        </a>
+      </div>
+
     </li>
   </ul>
 </div>

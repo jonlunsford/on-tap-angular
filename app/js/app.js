@@ -1,4 +1,4 @@
-var api = "http://0.0.0.0:3000\:3000";
+var api = "http://0.0.0.0:3000\:3000/api/v1";
 
 var onTap = angular.module("onTap", [
   "ngRoute",
@@ -8,13 +8,17 @@ var onTap = angular.module("onTap", [
   "ajoslin.mobile-navigate",
   "ngMobile",
   "onTapControllers",
-  "onTapServices"
+  "onTapServices",
+  "restangular"
 ]);
 
-onTap.config(["$routeProvider", function($routeProvider) {
+onTap.config(["$routeProvider", "RestangularProvider", function($routeProvider, RestangularProvider) {
+  RestangularProvider.setBaseUrl("http://0.0.0.0:3000/api/v1");
+
   $routeProvider
   .when("/search", {templateUrl: "../partials/searchView.html", controller: "searchController"})
   .when("/beers", {templateUrl: "../partials/beersListView.html", controller: "beersListController"})
+  .when("/breweries/:beerdb_id/beers", {templateUrl: "../partials/beersListView.html", controller: "beersListController"})
   .when("/beers/:id", {templateUrl: "../partials/beersDetailView.html", controller: "beersListController"})
   .otherwise({redirectTo: "/beers"})
 }]);

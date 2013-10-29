@@ -48,6 +48,7 @@ $break-small: 480px;
 @import "libs/topcoat-mobile-light";
 @import "libs/mobile-nav";
 @import "libs/font-awesome";
+@import "libs/angular";
 
 
 
@@ -66,6 +67,8 @@ body {
 }
 
 .inner-content {
+  position: relative;
+  overflow: hidden;
   padding: 0 15px;
 }
 

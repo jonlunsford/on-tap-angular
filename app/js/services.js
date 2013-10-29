@@ -8,18 +8,20 @@ onTapServices.factory("Beer", ["$resource",
   }
 ]);
 
-onTapServices.factory("SearchBrewery", ["$resource",
+onTapServices.factory("Search", ["$resource",
   function($resource) {
-    return $resource(api + "/breweries/search", {}, {
-      search: {method: "GET", params: {brewery_name: "@brewery_name"}, isArray: true}
-    }); 
+    return {
+      All: $resource(api + "/search/all", {}, {getResults: {method: "GET", params: {search_term: "@search_term"}, isArray: true}}),
+      Beer: $resource(api + "/search/beer", {}, {getResults: {method: "GET", params: {search_term: "@search_term"}, isArray: true}}),
+      Brewery: $resource(api + "/search/breweries", {}, {getResults: {method: "GET", params: {search_term: "@search_term"}, isArray: true}})
+    } 
   }
 ]);
 
-onTapServices.factory("GetBreweryBeers", ["$resource",
+onTapServices.factory("Breweries", ["$resource",
   function($resource) {
-    return $resource(api + "/breweries/:beerdb_id/beers", {}, {
-      getBeers: {method: "GET", params: {beerdb_id: "@beerdb_id"}, isArray: true}
-    }); 
+    return {
+      Beer: $resource(api + "/breweries/:beerdb_id/beers", {}, { getBeers: {method: "GET", params: {beerdb_id: "@beerdb_id"}, isArray: true}})
+    }
   }
 ]);
