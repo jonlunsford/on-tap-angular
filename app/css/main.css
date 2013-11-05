@@ -83,6 +83,14 @@ em { font-style: italic; }
 
 .inner-content .fa-refresh.fa-spin { position: absolute; top: 31px; right: 27px; color: #CCCBCB; }
 
+.control-group { margin-bottom: 15px; }
+
+.full-input { width: 100%; }
+
+.button-group { overflow: hidden; margin-top: 40px; }
+.button-group .half-input { width: 48.93617%; float: left; margin-right: 2.12766%; display: inline; }
+.button-group .half-input:last-child { float: right; margin-right: 0; *margin-left: -20px; display: inline; }
+
 /* Home page
 --------------------------------------------- */
 /**

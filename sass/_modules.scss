@@ -81,3 +81,24 @@ MODULES
     color: #CCCBCB;
   }
 }
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.full-input {
+  width: 100%;
+}
+
+.button-group {
+  overflow: hidden;
+  margin-top: 40px;
+  
+  .half-input {
+    @include span-columns(6, 12);
+
+    &:last-child {
+      @include omega
+    }
+  }
+}

@@ -16,11 +16,12 @@ onTap.config(["$routeProvider", "RestangularProvider", function($routeProvider, 
   RestangularProvider.setBaseUrl("http://0.0.0.0:3000/api/v1");
 
   $routeProvider
+  .when("/", {templateUrl: "../partials/registrationView.html", controller: "registrationController"})
   .when("/search", {templateUrl: "../partials/searchView.html", controller: "searchController"})
   .when("/beers", {templateUrl: "../partials/beersListView.html", controller: "beersListController"})
   .when("/breweries/:beerdb_id/beers", {templateUrl: "../partials/beersListView.html", controller: "beersListController"})
   .when("/beers/:id", {templateUrl: "../partials/beersDetailView.html", controller: "beersListController"})
-  .otherwise({redirectTo: "/beers"})
+  .otherwise({redirectTo: "/"})
 }]);
 
 onTap.run(function($route, $http, $templateCache) {
