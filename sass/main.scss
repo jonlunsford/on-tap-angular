@@ -1,7 +1,7 @@
 /* /////////////////////////////////////////////////////
 
-PROJECT NAME
-matt@wintr.us @ WINTR
+On Tap Angular
+jon@capturethecastle.net @ Capture The Castle
 
 ///////////////////////////////////////////////////// */
 
@@ -19,10 +19,11 @@ matt@wintr.us @ WINTR
 /* Variables
 --------------------------------------------- */
 
-$base-color: #666666;
+$base-color: #606366;
 $highlight-color: #ea2427;
 
-$body-font: Helvetica, Arial, sans-serif;
+$body-font: "Helvetica Nueu", Helvetica, Arial, sans-serif;
+$content-font: "roboto-light";
 
 $break-small: 480px;
 
@@ -45,7 +46,6 @@ $break-small: 480px;
 @import "utils";
 @import "modules";
 @import "pages";
-@import "libs/topcoat-mobile-light";
 @import "libs/mobile-nav";
 @import "libs/font-awesome";
 @import "libs/angular";
@@ -57,9 +57,6 @@ $break-small: 480px;
 GLOBAL LAYOUT
 
 ///////////////////////////////////////////////////// */
-
-body {
-}
 
 .content-panel {
   @include container;

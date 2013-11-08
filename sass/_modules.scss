@@ -9,96 +9,100 @@ MODULES
 
 ///////////////////////////////////////////////////// */
 
-.main-input {
-  @include span-columns(12, 12);
-  margin: 15px  0 !important;
-  display: inline-block;
-}
+/* ios 7 UI
+--------------------------------------------- */
 
-.topcoat-list__item {
-  cursor: pointer;
-  overflow: hidden;
+$content-bg-color: #efeff4;
+$header-bg-color: #f8f8f8;
+$border-color: #b2b2b2;
+$cta-color: #47c9af;
 
-  &:active {
-    background: #C5C5C5;
+/* Navigation Bars */
+
+.ui-navigation-bar {
+  height: 60px;
+  margin-bottom: 20px;
+  background: $header-bg-color;
+  border-bottom: 1px solid $border-color;
+
+  .ui-navigation-bar_title {
+    margin: 0;
+    line-height: 3.7rem;
   }
 }
 
-.list-item-left {
-  @include span-columns(2, 12);
-}
-
-.list-item-right {
-  @include span-columns(9, 12);
-}
-
-.topcoat-tab-bar {
-  position: fixed;
-  bottom: 0;
-}
-
-.fa-beer {
-  font-size: 42px;
-  height: 37px;
-  width: 44px;
-  right: 3px;
-  color: #ACACAC;
-
-  &.active,
-  &:active {
-    color: #81CF84;
-  }
-}
-
-.topcoat-navigation-bar {
-  position: fixed;
-  width: 100%;
-}
-
-.header-control-left {
-  position: absolute;
-  top: 19px;
-  font-size: 25px;
-  z-index: 2;
-  cursor: pointer;
-}
-
-.inline-list {
-  color: #8A8383;
-  overflow: hidden;
-  li {
-    margin-right: 10px;
-    float: left;
-  }
-}
-
-.inner-content {
-
-  .fa-refresh.fa-spin {
-    position: absolute;
-    top: 31px;
-    right: 27px;
-    color: #CCCBCB;
-  }
-}
+/* Form fields */
 
 .control-group {
+  position: relative;
   margin-bottom: 15px;
 }
 
-.full-input {
+input,
+button {
+  border: none;
+  font-family: $content-font;
+
+  &.error {
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+  }
+}
+
+.ui-text-input {
   width: 100%;
+  height: 50px;
+  font-size: 16px;
+  padding: 0 10px;
+  border-bottom: 1px solid $border-color;
+}
+
+.validation-error {
+  color: red;
+  padding: 0 10px;
+  display: inline-block;
+  margin: 5px 0 0 0;
+  position: absolute;
+  top: 9px;
+  right: 0;
+  font-size: 11px;
+}
+
+.ui-button--cta {
+  color: #fff;
+  background: $cta-color;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:first-child {
+    margin-bottom: 10px;
+  }
+
+  &:active,
+  &:hover {
+    background: adjust-lightness($cta-color, -5%);
+  }
 }
 
 .button-group {
-  overflow: hidden;
   margin-top: 40px;
-  
-  .half-input {
-    @include span-columns(6, 12);
+  padding: 0 10px;
+  @include span-columns(12, 12);
+}
 
-    &:last-child {
-      @include omega
-    }
-  }
+/* Utilities */
+
+.full {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
 }
