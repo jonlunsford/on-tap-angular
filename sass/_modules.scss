@@ -16,6 +16,14 @@ $content-bg-color: #efeff4;
 $header-bg-color: #f8f8f8;
 $border-color: #b2b2b2;
 $cta-color: #47c9af;
+$highlight-color: #157efb;
+$neutral-color: #e7e8e8;
+
+/* Base */
+
+.highlight-link {
+  color: $highlight-color;
+}
 
 /* Navigation Bars */
 
@@ -92,6 +100,71 @@ button {
   @include span-columns(12, 12);
 }
 
+/* Dialogs */
+
+.ui-alert-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  @include transition(all .2s ease-out);
+
+  &.alert-transition-in {
+    display: block;
+  }
+}
+
+.ui-alert {
+  width: 250px;
+  background: $neutral-color;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  left: 50%;
+  top: 30%;
+  display: none;
+  margin: 0 0 0 -125px;
+
+  &.alert-transition-in {
+    display: block;
+    @include animation(bounce-in, .5s, 1, ease, normal);
+  }
+}
+
+.ui-alert_message {
+  padding: 15px 15px 0 15px;
+  font-family: $body-font;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ui-alert_button {
+  background: none;
+  font-size: 16px;
+  border-top: 1px solid $border-color;
+  height: 45px;
+
+  &:active,
+  &:hover {
+    cursor: pointer;
+    background: adjust-lightness($neutral-color, -5%);
+  }
+
+  &.half-width {
+    width: 50%;
+    float: left;
+    
+    &:last-child {
+      border-left: 1px solid $border-color;
+    }
+  }
+
+}
+
 /* Utilities */
 
 .full {
@@ -105,4 +178,24 @@ button {
 .bottom {
   position: absolute;
   bottom: 0;
+}
+
+@include keyframes(bounce-in) {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+  }
+  
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+  }
+  
+  70% {
+    -webkit-transform: scale(.9);
+  }
+  
+  100% {
+    -webkit-transform: scale(1);
+  }
 }

@@ -9,7 +9,8 @@ var onTap = angular.module("onTap", [
   "ngMobile",
   "onTapControllers",
   "onTapServices",
-  "restangular"
+  "restangular",
+  "angularLocalStorage"
 ]);
 
 onTap.config(["$routeProvider", "RestangularProvider", function($routeProvider, RestangularProvider) {
@@ -17,6 +18,8 @@ onTap.config(["$routeProvider", "RestangularProvider", function($routeProvider, 
 
   $routeProvider
   .when("/", {templateUrl: "../partials/registrationView.html", controller: "registrationController"})
+  .when("/vendors/:id", {templateUrl: "../partials/vendorView.html", controller: "vendorsController"})
+  .when("/users/:id", {templateUrl: "../partials/userView.html", controller: "usersController"})
   .when("/search", {templateUrl: "../partials/searchView.html", controller: "searchController"})
   .when("/beers", {templateUrl: "../partials/beersListView.html", controller: "beersListController"})
   .when("/breweries/:beerdb_id/beers", {templateUrl: "../partials/beersListView.html", controller: "beersListController"})

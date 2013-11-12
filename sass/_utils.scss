@@ -68,25 +68,42 @@ $old-ie: false !default;
   }
 }
 
+/* Animations
+--------------------------------------------- */
 
+.ui-animated {
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
 
+/* Keyframes */
 
-/* /////////////////////////////////////////////////////
-
-GOOD COMPASS MIXINS TO KNOW ABOUT
-
-image-width($image)
-image-height($image)
-image-url($image)
-
-replace-text($img, $x, $y)
-hide-text() 
-  @import "compass/typography/text/replacement";
+@mixin keyframes($name) {
   
-inline-block
-  @import "compass/css3/inline-block";
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+} 
 
-opacity($opacity)
-  @import "compass/css3/opacity"
+/* Keyframe animations */
 
-///////////////////////////////////////////////////// */
+@mixin animation($name, $duration, $repetition, $timing, $direction) {
+  -webkit-animation: #{$name} #{$duration} #{$repetition} #{$timing} #{$direction}; 
+  -moz-animation:    #{$name} #{$duration} #{$repetition} #{$timing} #{$direction}; 
+  -o-animation:      #{$name} #{$duration} #{$repetition} #{$timing} #{$direction}; 
+  animation:         #{$name} #{$duration} #{$repetition} #{$timing} #{$direction};
+}
+
+// @include animation(cloud-slow, 100s, 1, linear);
