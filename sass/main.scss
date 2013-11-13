@@ -13,6 +13,7 @@ jon@capturethecastle.net @ Capture The Castle
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
 @import "compass/css3/background-size";
+@import "compass/css3/images";
 
 
 
@@ -81,5 +82,27 @@ GLOBAL LAYOUT
 .banner {
   img {
     width: 100%;
+  }
+}
+
+/* User Profile 
+--------------------------------------------- */
+
+.profile-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 180px;
+  line-height: 30px;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.profile-footer {
+  bottom: 20px;
+  left: 20px;
+
+  a, i {
+    color: $base-color;
   }
 }

@@ -14,18 +14,18 @@
 
   <div class="control-group">
     <input type="password" class="ui-text-input full-input" placeholder="Password:" ng-model="password" ng-class="{error: passwordErrors}">
-    <label for="emil" class="validation-error" ng-show="passwordErrors">{{passwordValidation}}</label>
+    <label for="email" type="Email" class="validation-error" ng-show="passwordErrors">{{passwordValidation}}</label>
   </div>
 
   <div class="control-group button-group">
-    <button class="ui-button--cta full" ng-click="signIn({email: email, password: password})">Login</button>
-    <button class="ui-button--cta full" ng-click="register(email, password)">Signup</button>
+    <button class="ui-button--cta full" ng-tap="signIn({email: email, password: password})">Login</button>
+    <button class="ui-button--cta full" ng-tap="register(email, password)">Signup</button>
   </div>
 
   <div class="ui-alert ui-alert--buttons" ng-class="{true: 'alert-transition-in', false: ''}[shouldAskUser]">
     <p class="ui-alert_message">How would you like to use On Tap?</p>
-    <button class="ui-alert_button half-width highlight-link" ng-click="setUserType(2)">Beer Geek</button>
-    <button class="ui-alert_button half-width highlight-link" ng-click="setUserType(1)">Bar Keep</button>
+    <button class="ui-alert_button half-width highlight-link" ng-tap="setUserType(2)">Beer Geek</button>
+    <button class="ui-alert_button half-width highlight-link" ng-tap="setUserType(1)">Bar Keep</button>
   </div>
   <div class="ui-alert-bg" ng-class="{true: 'alert-transition-in', false: ''}[shouldAskUser]"></div>
 </div>

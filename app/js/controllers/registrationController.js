@@ -48,13 +48,17 @@ onTapControllers.controller("registrationController", [
       storage.set("auth_token", serverData.authentication_token);
       storage.set("user_id", serverData.user);
       storage.set("is_signed_in", true);
+      var existingRoleId = parseInt(storage.get("role_id"), 10)
 
       if(!storage.get("role_id")) {
         $scope.shouldAskUser = true; 
       } else {
-        var userPath = (storage.get("role_id") === "1" ? "vendors" : "users");
+        var userPath = existingRoleId === 1 ? "vendors" : "users";
         $navigate.go(userPath + "/" + storage.get("user_id"));
       }
+
+      console.log(userPath);
+      console.log(existingRoleId);
     };
 
     $scope.setUserType = function(typeId) {

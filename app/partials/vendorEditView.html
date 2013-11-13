@@ -1,0 +1,83 @@
+<div class="content-panel" ng-controller="vendorsController">
+  
+  <div class="ui-navigation-bar fixed">
+    <div class="uin-navigation-bar_item center full">
+      <a href="#" ng-tap="$nagivate.back()" class="navigation-back"><i class="fa fa-angle-left"></i> Back</a>
+      <h1 class="ui-navigation-bar_title">Edit Profile</h1>
+    </div>
+  </div>
+  
+  <ul class="ui-horizontal-tabs">
+    <li>
+      <a class="active" href="#">General</a>
+    </li>
+    <li>
+      <a href="#">Contact</a>
+    </li>
+    <li>
+      <a href="#">Password</a>
+    </li>
+  </ul>
+
+  <form action="#" name="user" class="user-form">
+    <div class="ui-tab-pane tab-pane_general">
+      <div class="control-group">
+        <input type="text" class="ui-text-input full-input" placeholder="Name:">
+        <label for="name" class="validation-error" ng-show="nameErrors"></label>
+      </div>
+
+      <div class="control-group">
+        <input type="text" class="ui-text-input full-input" placeholder="Email:">
+        <label for="email" class="validation-error" ng-show="emailErrors"></label>
+      </div>
+
+      <div class="control-group">
+        <input type="test" class="ui-text-input full-input" placeholder="Date Established:">
+        <label for="date" class="validation-error" ng-show="dateErrors"></label>
+      </div>
+
+      <div class="control-group">
+        <textarea name="description" class="ui-text-area" placeholder="Description:"></textarea>
+        <label for="description" class="validation-error" ng-show="descrrors"></label>
+      </div>
+    </div><!-- .ui-tab-pane -->
+
+    <div class="ui-tab-pane tab-pane_contact">
+      <div class="control-group">
+        <input type="text" class="ui-text-input full-input" placeholder="Website:">
+        <label for="name" class="validation-error" ng-show="websiteErrors"></label>
+      </div>
+
+      <div class="control-group">
+        <input type="text" class="ui-text-input full-input" placeholder="Address:">
+        <label for="name" class="validation-error" ng-show="addressErrors"></label>
+      </div>
+
+      <div class="control-group">
+        <input type="text" class="ui-text-input full-input" placeholder="Address Continued:">
+        <label for="name" class="validation-error" ng-show="addressErrors"></label>
+      </div>
+    </div><!-- .ui-tab-pane -->
+
+    <div class="ui-tab-pane tab-pane_password">
+      <div class="control-group">
+        <input type="password" class="ui-text-input full-input" placeholder="Current Password:">
+        <label for="name" class="validation-error" ng-show="passwordErrors"></label>
+      </div>
+
+      <div class="control-group">
+        <input type="password" class="ui-text-input full-input" placeholder="New Password:">
+        <label for="name" class="validation-error" ng-show="passwordErrors"></label>
+      </div>
+
+      <div class="control-group">
+        <input type="password" class="ui-text-input full-input" placeholder="Confirm Password:">
+        <label for="name" class="validation-error" ng-show="passwordErrors"></label>
+      </div>
+    </div><!-- .ui-tab-pane -->
+    
+    <div class="control-group button-group">
+      <button type="button" class="ui-button--cta full">Save</button>
+    </div>
+  </form>
+</div>
