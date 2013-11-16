@@ -53,12 +53,8 @@ onTapControllers.controller("registrationController", [
       if(!storage.get("role_id")) {
         $scope.shouldAskUser = true; 
       } else {
-        var userPath = existingRoleId === 1 ? "vendors" : "users";
-        $navigate.go(userPath + "/" + storage.get("user_id"));
+        navigateToUserAccount(existingRoleId, storage.get("user_id"));
       }
-
-      console.log(userPath);
-      console.log(existingRoleId);
     };
 
     $scope.setUserType = function(typeId) {
@@ -68,10 +64,14 @@ onTapControllers.controller("registrationController", [
         baseRegistration.customPUT({user: user}, storage.get("user_id"), {auth_token: storage.get("auth_token")}).then(function(response){
           storage.set("role_id", typeId);
           $scope.shouldAskUser = false;
+          navigateToUserAccount(storage.get("role_id"), storage.get("user_id"));
         });
       }
-      var userPath = (typeId === 1 ? "vendors" : "users");
-      $navigate.go(userPath + "/" + storage.get("user_id"));
+    };
+
+    navigateToUserAccount = function(userTypeId, userId) {
+      var userPath = (userTypeId === 1 ? "vendors" : "users");
+      $navigate.go(userPath + "/" + userId); 
     }
   }
 ]);
