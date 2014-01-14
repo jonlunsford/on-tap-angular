@@ -50,7 +50,7 @@ $info-color: #606366;
 
     i {
       font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 }
@@ -205,6 +205,8 @@ button {
 
   li {
     float: left;
+    width: 33.333%;
+    text-align: center;
 
     &:last-child {
       
@@ -221,6 +223,7 @@ button {
       color: $highlight-color;
       font-family: $body-font;
       white-space: nowrap;
+      width: 100%;
 
       &:hover, 
       &.active {

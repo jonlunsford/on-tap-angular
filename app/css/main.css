@@ -77,7 +77,7 @@ em { font-style: italic; }
 .ui-navigation-bar { height: 60px; position: relative; background: #f8f8f8; border-bottom: 1px solid #ececef; }
 .ui-navigation-bar .ui-navigation-bar_title { margin: 0; line-height: 3.7rem; }
 .ui-navigation-bar .navigation-back { position: absolute; left: 10px; top: 19px; color: #157efb; }
-.ui-navigation-bar .navigation-back i { font-weight: bold; font-size: 20px; }
+.ui-navigation-bar .navigation-back i { font-weight: bold; font-size: 18px; }
 
 /* Form fields */
 .control-group { position: relative; margin-bottom: 15px; }
@@ -115,9 +115,9 @@ input.error, textarea.error, button.error { border-top: 1px solid red; border-bo
 
 /* Horizontal tabs */
 .ui-horizontal-tabs { overflow: hidden; border: 1px solid #157efb; border-radius: 5px; margin: 20px 10px; }
-.ui-horizontal-tabs li { float: left; }
+.ui-horizontal-tabs li { float: left; width: 33.333%; text-align: center; }
 .ui-horizontal-tabs li:last-child a { border-right: none; padding-right: 18px; }
-.ui-horizontal-tabs li a { border-right: 1px solid #157efb; display: inline-block; padding: 5px 19px; color: #157efb; font-family: "Helvetica Nueu", Helvetica, Arial, sans-serif; white-space: nowrap; }
+.ui-horizontal-tabs li a { border-right: 1px solid #157efb; display: inline-block; padding: 5px 19px; color: #157efb; font-family: "Helvetica Nueu", Helvetica, Arial, sans-serif; white-space: nowrap; width: 100%; }
 .ui-horizontal-tabs li a:hover, .ui-horizontal-tabs li a.active { background: #157efb; color: #fff; }
 
 /* Stats */
