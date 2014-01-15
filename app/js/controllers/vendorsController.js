@@ -2,8 +2,9 @@ onTapControllers.controller("vendorsController", [
   "$scope",
   "Restangular",
   "storage",
+  "flash",
 
-  function vendorsController($scope, Restangular, storage) {
+  function vendorsController($scope, Restangular, storage, flash) {
     $scope.userId = storage.get("user_id");
     currentUser = Restangular.one("users", $scope.userId);
     getRequest = currentUser.get({auth_token: storage.get("auth_token")});
@@ -20,7 +21,6 @@ onTapControllers.controller("vendorsController", [
     });
 
     $scope.saveUserInfo = function() {
-      console.log("SUBMIT");
       var userInfo = {
         name: $scope.userName,
         email: $scope.userEmail,
@@ -31,10 +31,12 @@ onTapControllers.controller("vendorsController", [
         address_line_two: $scope.userAddressLineTwo
       };
 
-      currentUser.put({user: userInfo, auth_token: storage.get("auth_token")});
-      currentUser.then(function(user) {
-        console.log(user);
+      putRequest = currentUser.customPUT({user: userInfo, auth_token: storage.get("auth_token")});
+      putRequest.then(function(user) {
+        flash("Profile updated successfully!");
+        $scope.hideFlashes();
       });
     };
+
   }
 ]);

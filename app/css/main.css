@@ -76,7 +76,7 @@ em { font-style: italic; }
 /* Navigation Bars */
 .ui-navigation-bar { height: 60px; position: relative; background: #f8f8f8; border-bottom: 1px solid #ececef; }
 .ui-navigation-bar .ui-navigation-bar_title { margin: 0; line-height: 3.7rem; }
-.ui-navigation-bar .navigation-back { position: absolute; left: 10px; top: 19px; color: #157efb; }
+.ui-navigation-bar .navigation-back { position: absolute; left: 10px; top: 16px; color: #157efb; font-size: 15px; background: none; }
 .ui-navigation-bar .navigation-back i { font-weight: bold; font-size: 18px; }
 
 /* Form fields */
@@ -179,6 +179,25 @@ input.error, textarea.error, button.error { border-top: 1px solid red; border-bo
   50% { opacity: 1; -webkit-transform: scale(1.05); }
   70% { -webkit-transform: scale(0.9); }
   100% { -webkit-transform: scale(1); } }
+
+/* App Modules
+--------------------------------------------- */
+#flash-messages { position: fixed; width: 100%; text-align: center; z-index: 10; font-size: 14px; }
+#flash-messages li { padding: 10px; border-bottom: 3px solid rgba(0, 0, 0, 0.1); color: #fff; font-weight: bold; }
+#flash-messages .success { background: #47c9af; }
+#flash-messages .error { background: #ef6060; }
+#flash-messages .warning { background: #efcd0c; }
+#flash-messages .info { background: #5693da; }
+
+.slide-down { display: none !important; }
+
+.slide-down.ng-hide-remove { display: block !important; animation: slide-down-enter 250ms ease-out, slide-down-leave 500ms 3s ease; }
+
+@keyframes slide-down-enter { from { opacity: 0; transform: translateY(-75%); }
+  to { opacity: 1; transform: translateY(0); } }
+
+@keyframes slide-down-leave { from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(75%); } }
 
 /* Home page
 --------------------------------------------- */

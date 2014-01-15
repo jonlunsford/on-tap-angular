@@ -19,6 +19,9 @@ $border-color: #ececef;
 $light-border-color: #ececef;
 $cta-color: #47c9af;
 $highlight-color: #157efb;
+$error-color: #EF6060;
+$warning-color: #EFCD0C;
+$flash-info-color: #5693DA;
 $secondary-highlight-color: #4fc3d4;
 $neutral-color: #e7e8e8;
 $info-color: #606366;
@@ -45,8 +48,10 @@ $info-color: #606366;
   .navigation-back {
     position: absolute;
     left: 10px;
-    top: 19px;
+    top: 16px;
     color: $highlight-color;
+    font-size: 15px;
+    background: none;
 
     i {
       font-weight: bold;
@@ -372,4 +377,55 @@ button {
   100% {
     -webkit-transform: scale(1);
   }
+}
+
+/* App Modules
+--------------------------------------------- */
+
+#flash-messages {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  font-size: 14px;
+
+  li {
+    padding: 10px;
+    border-bottom: 3px solid rgba(0,0,0,0.1);
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .success {
+    background: $cta-color;
+  }
+
+  .error {
+    background: $error-color;
+  }
+
+  .warning {
+    background: $warning-color;
+  }
+
+  .info {
+    background: $flash-info-color;
+  }
+}
+
+
+.slide-down { display: none !important; }
+.slide-down.ng-hide-remove {
+  display: block !important;
+  animation:
+    slide-down-enter 250ms ease-out,
+    slide-down-leave 500ms 3s ease;
+}
+@keyframes slide-down-enter {
+  from { opacity: 0; transform: translateY(-75%); } 
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-down-leave {
+  from { opacity: 1; transform: translateY(0); } 
+  to { opacity: 0; transform: translateY(75%); }
 }

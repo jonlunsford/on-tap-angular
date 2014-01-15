@@ -10,7 +10,8 @@ var onTap = angular.module("onTap", [
   "onTapControllers",
   "onTapServices",
   "restangular",
-  "angularLocalStorage"
+  "angularLocalStorage",
+  "flash"
 ]);
 
 onTap.config(["$routeProvider", "RestangularProvider", function($routeProvider, RestangularProvider) {
@@ -25,12 +26,12 @@ onTap.config(["$routeProvider", "RestangularProvider", function($routeProvider, 
   .when("/beers", {templateUrl: "../partials/beersListView.html", controller: "beersListController"})
   .when("/breweries/:beerdb_id/beers", {templateUrl: "../partials/beersListView.html", controller: "beersListController"})
   .when("/beers/:id", {templateUrl: "../partials/beersDetailView.html", controller: "beersListController"})
-  .otherwise({redirectTo: "/"})
+  .otherwise({redirectTo: "/"});
 }]);
 
 onTap.run(function($route, $http, $templateCache) {
   angular.forEach($route.routes, function(r) {
-    if (r.templateUrl) { 
+    if (r.templateUrl) {
       $http.get(r.templateUrl, {cache: $templateCache});
     }
   });

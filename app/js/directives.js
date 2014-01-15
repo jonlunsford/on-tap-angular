@@ -5,7 +5,7 @@ onTap.directive('ngTap', function() {
       var tapping = false;
       elm.bind('touchstart', function() { tapping = true; });
       elm.bind('touchmove', function() { tapping = false; });
-      elm.bind('touchend', function() { 
+      elm.bind('touchend', function() {
         tapping && scope.$apply(attrs.ngTap);
       });
     } else {
@@ -17,9 +17,9 @@ onTap.directive('ngTap', function() {
 });
 
 onTap.directive("CheckUser",[
-  "$rootScope", 
-  "$location", 
-  "UserService", 
+  "$rootScope",
+  "$location",
+  "UserService",
 
   function($root, $location, UserService) {
     return {
@@ -28,8 +28,24 @@ onTap.directive("CheckUser",[
           if(!prevRoute.access.isPublic && !UserService.isLoggedIn) {
             // TODO add logic to redirect to login route.
           }
-        })
+        });
       }
-    }
+    };
   }
 ]);
+
+onTap.directive("basicTabs", function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      angular.element(element).basicTabs({
+        customActiveClass: 'active',
+        tabsParentSelector: '.ui-horizontal-tabs',
+        tabSelector: 'li',
+        tabsLinkSelector: "a",
+        tabsContentSelector: '.ui-tab-pane',
+        verticalTabs: false
+      });
+    }
+  };
+});

@@ -7,6 +7,18 @@ onTapControllers.controller("registrationController", [
   function registrationController($scope, Restangular, $navigate, storage) {
     var baseRegistration = Restangular.all("users");
     
+    $scope.userRoleId = storage.get("role_id");
+    $scope.userId = storage.get("user_id");
+    
+    navigateToUserAccount = function(userTypeId, userId) {
+      var userPath = (userTypeId === 1 ? "vendors" : "users");
+      $navigate.go(userPath + "/" + userId);
+    };
+    
+    if($scope.userRoleId && $scope.userId) {
+      navigateToUserAccount($scope.userRoleId, $scope.userId);
+    }
+
     $scope.register = function(email, password) {
       $scope.emailErrors = false;
       $scope.passwordErrors = false;
@@ -16,7 +28,7 @@ onTapControllers.controller("registrationController", [
       baseRegistration.post({user: user}).then(function() {
         $scope.signIn(user);
       }, function(response) {
-        handleLoginErrors(response)
+        handleLoginErrors(response);
       });
     };
 
@@ -26,10 +38,10 @@ onTapControllers.controller("registrationController", [
         $scope.emailValidation = "Email address " + serverResponse.data.email[0];
       } else if(serverResponse.data.password) {
         $scope.passwordErrors = true;
-        $scope.passwordValidation = "Password " + serverResponse.data.password[0]
+        $scope.passwordValidation = "Password " + serverResponse.data.password[0];
       } else if(serverResponse.data.errors) {
         $scope.passwordErrors = true;
-        $scope.passwordValidation = serverResponse.data.errors[0]
+        $scope.passwordValidation = serverResponse.data.errors[0];
       }
     };
 
@@ -48,10 +60,10 @@ onTapControllers.controller("registrationController", [
       storage.set("auth_token", serverData.authentication_token);
       storage.set("user_id", serverData.user);
       storage.set("is_signed_in", true);
-      var existingRoleId = parseInt(storage.get("role_id"), 10)
+      var existingRoleId = parseInt(storage.get("role_id"), 10);
 
       if(!storage.get("role_id")) {
-        $scope.shouldAskUser = true; 
+        $scope.shouldAskUser = true;
       } else {
         navigateToUserAccount(existingRoleId, storage.get("user_id"));
       }
@@ -68,10 +80,5 @@ onTapControllers.controller("registrationController", [
         });
       }
     };
-
-    navigateToUserAccount = function(userTypeId, userId) {
-      var userPath = (userTypeId === 1 ? "vendors" : "users");
-      $navigate.go(userPath + "/" + userId); 
-    }
   }
 ]);

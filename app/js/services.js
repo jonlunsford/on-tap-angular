@@ -6,7 +6,7 @@ onTapServices.factory("UserService", ["storage", function(storage) {
     roleId: null,
     userId: null,
     authToken: null
-  }
+  };
 
   return currentUser;
 }]);
@@ -20,5 +20,5 @@ onTapServices.service("SessionService", function() {
 
   this.getUserAuthenticated = function() {
     return userIsAuthenticated;
-  }
+  };
 });
