@@ -213,12 +213,18 @@ button {
     width: 33.333%;
     text-align: center;
 
+    &.active a {
+      background: $highlight-color;
+      color: #fff;
+    }
+
     &:last-child {
       
       a {
         border-right: none;
         padding-right: 18px;
       }
+
     }
 
     a {
@@ -229,12 +235,6 @@ button {
       font-family: $body-font;
       white-space: nowrap;
       width: 100%;
-
-      &:hover, 
-      &.active {
-        background: $highlight-color;
-        color: #fff;
-      }
     }
   }
 }

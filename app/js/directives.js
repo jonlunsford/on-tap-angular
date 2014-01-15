@@ -38,7 +38,7 @@ onTap.directive("basicTabs", function() {
   return {
     restrict: 'A',
     link: function(scope, element, attrs) {
-      angular.element(element).basicTabs({
+      $(element).basicTabs({
         customActiveClass: 'active',
         tabsParentSelector: '.ui-horizontal-tabs',
         tabSelector: 'li',

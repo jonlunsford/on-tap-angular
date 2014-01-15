@@ -116,9 +116,9 @@ input.error, textarea.error, button.error { border-top: 1px solid red; border-bo
 /* Horizontal tabs */
 .ui-horizontal-tabs { overflow: hidden; border: 1px solid #157efb; border-radius: 5px; margin: 20px 10px; }
 .ui-horizontal-tabs li { float: left; width: 33.333%; text-align: center; }
+.ui-horizontal-tabs li.active a { background: #157efb; color: #fff; }
 .ui-horizontal-tabs li:last-child a { border-right: none; padding-right: 18px; }
 .ui-horizontal-tabs li a { border-right: 1px solid #157efb; display: inline-block; padding: 5px 19px; color: #157efb; font-family: "Helvetica Nueu", Helvetica, Arial, sans-serif; white-space: nowrap; width: 100%; }
-.ui-horizontal-tabs li a:hover, .ui-horizontal-tabs li a.active { background: #157efb; color: #fff; }
 
 /* Stats */
 .ui-stats-row { overflow: hidden; border-bottom: 1px solid #ececef; }
