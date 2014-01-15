@@ -102,7 +102,7 @@ $old-ie: false !default;
 @mixin animation($name, $duration, $repetition, $timing, $direction) {
   -webkit-animation: #{$name} #{$duration} #{$repetition} #{$timing} #{$direction}; 
   -moz-animation:    #{$name} #{$duration} #{$repetition} #{$timing} #{$direction}; 
-  -o-animation:      #{$name} #{$duration} #{$repetition} #{$timing} #{$direction}; 
+  -o-animation:      #{$name} #{$duration} l#{$repetition} #{$timing} #{$direction}; 
   animation:         #{$name} #{$duration} #{$repetition} #{$timing} #{$direction};
 }
 
@@ -115,8 +115,11 @@ $old-ie: false !default;
   
   &.ng-hide-remove {
     display: block;
-    @include animation(slide-down-enter, 500ms, 1, ease-out, normal);
-    @include animation(slide-up-leave, 500ms, 1, ease, normal);
+    -webkit-animation: slide-down-enter 250ms ease-out, slide-up-leave 500ms 2s ease;
+    -moz-animation: slide-down-enter 250ms ease-out, slide-up-leave 500ms 2s ease;
+    -ms-animation: slide-down-enter 250ms ease-out, slide-up-leave 500ms 2s ease;
+    -o-animation: slide-down-enter 250ms ease-out, slide-up-leave 500ms 2s ease;
+    animation: slide-down-enter 250ms ease-out, slide-up-leave 500ms 2s ease;
   }
 }
 

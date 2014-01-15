@@ -9,13 +9,13 @@
   <div class="ui-masthead user-profil-header">
     <div class="masthead-left_small">
       <div class="ui-round-image">
-        <img src="http://placehold.it/75x75/57e6e7/ffffff" alt="User anme" class="image-rounded_large">
+        <img src="http://placehold.it/75x75/57e6e7/ffffff" alt="{{user.name}}" class="image-rounded_large">
       </div>
     </div><!-- .mastheader-left_small -->
 
     <div class="masthead-right_large">
-      <h2 class="profile-name">Molly Pitcher Brewing Company</h2>
-      <a href="@" class="social-link small">@mollypitcher</a>
+      <h2 class="profile-name">{{user.name}}</h2>
+      <a href="@" class="social-link small">@addUserNameToModel</a>
       <ul class="ui-stat-list small">
         <li>
           <strong>186</strong> followers
@@ -37,7 +37,7 @@
   </div><!-- .ui-stat-row -->
 
   <ul class="ui-action-list">
-    <li ng-click="$navigate.go('/vendors/{{userId}}/edit')">
+    <li ng-tap="$navigate.go('/vendors/{{userId}}/edit')">
       <i class="fa fa-user action-list-icon"></i>
       <h3>Edit Profile</h3>
       <i class="fa fa-angle-right"></i>

@@ -71,7 +71,7 @@ em { font-style: italic; }
 /* Module Animations
 --------------------------------------------- */
 .slide-down { display: none; }
-.slide-down.ng-hide-remove { display: block; -webkit-animation: slide-down-enter 500ms 1 ease-out normal; -moz-animation: slide-down-enter 500ms 1 ease-out normal; -o-animation: slide-down-enter 500ms 1 ease-out normal; animation: slide-down-enter 500ms 1 ease-out normal; -webkit-animation: slide-up-leave 500ms 1 ease normal; -moz-animation: slide-up-leave 500ms 1 ease normal; -o-animation: slide-up-leave 500ms 1 ease normal; animation: slide-up-leave 500ms 1 ease normal; }
+.slide-down.ng-hide-remove { display: block; -webkit-animation: slide-down-enter 250ms ease-out, slide-up-leave 500ms 2s ease; -moz-animation: slide-down-enter 250ms ease-out, slide-up-leave 500ms 2s ease; -ms-animation: slide-down-enter 250ms ease-out, slide-up-leave 500ms 2s ease; -o-animation: slide-down-enter 250ms ease-out, slide-up-leave 500ms 2s ease; animation: slide-down-enter 250ms ease-out, slide-up-leave 500ms 2s ease; }
 
 @-webkit-keyframes slide-down-enter { from { opacity: 0; transform: translateY(-75%); }
   to { opacity: 1; transform: translateY(0); } }
@@ -145,7 +145,7 @@ input.error, textarea.error, button.error { border-top: 1px solid red; border-bo
 .ui-alert-bg.alert-transition-in { display: block; }
 
 .ui-alert { width: 250px; background: #e7e8e8; border-radius: 5px; position: absolute; z-index: 2; overflow: hidden; left: 50%; top: 30%; display: none; margin: 0 0 0 -125px; }
-.ui-alert.alert-transition-in { display: block; -webkit-animation: bounce-in 0.5s 1 ease normal; -moz-animation: bounce-in 0.5s 1 ease normal; -o-animation: bounce-in 0.5s 1 ease normal; animation: bounce-in 0.5s 1 ease normal; }
+.ui-alert.alert-transition-in { display: block; -webkit-animation: bounce-in 0.5s 1 ease normal; -moz-animation: bounce-in 0.5s 1 ease normal; -o-animation: bounce-in 0.5s l1 ease normal; animation: bounce-in 0.5s 1 ease normal; }
 
 .ui-alert_message { padding: 15px 15px 0 15px; font-family: "Helvetica Nueu", Helvetica, Arial, sans-serif; font-weight: bold; text-align: center; }
 
@@ -229,16 +229,6 @@ input.error, textarea.error, button.error { border-top: 1px solid red; border-bo
 #flash-messages .error { background: #ef6060; }
 #flash-messages .warning { background: #efcd0c; }
 #flash-messages .info { background: #5693da; }
-
-.slide-down { display: none !important; }
-
-.slide-down.ng-hide-remove { display: block !important; animation: slide-down-enter 250ms ease-out, slide-down-leave 500ms 3s ease; }
-
-@keyframes slide-down-enter { from { opacity: 0; transform: translateY(-75%); }
-  to { opacity: 1; transform: translateY(0); } }
-
-@keyframes slide-down-leave { from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(75%); } }
 
 /* Home page
 --------------------------------------------- */
