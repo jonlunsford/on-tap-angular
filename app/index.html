@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body ng-controller="applicationController">
-    <flash:messages></flash:messages>
+    <flash:messages class="slide-down" ng-show="messages"></flash:messages>
     <div class="main-wrap" ng-view></div>
     <!-- <mobile-view class="main-wrap"></mobile-view> -->
     
@@ -35,9 +35,9 @@
     <script src="js/controllers/beersListController.js"></script>
     <script src="js/controllers/beersDetailController.js"></script>
 
+    <script src="js/app.js"></script>
     <script src="js/modules.js"></script>
     <script src="js/services.js"></script>
-    <script src="js/app.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/main.js"></script>
     

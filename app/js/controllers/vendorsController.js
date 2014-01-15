@@ -3,8 +3,10 @@ onTapControllers.controller("vendorsController", [
   "Restangular",
   "storage",
   "flash",
+  "sessionService",
+  "$navigate",
 
-  function vendorsController($scope, Restangular, storage, flash) {
+  function vendorsController($scope, Restangular, storage, flash, sessionService, $navigate) {
     $scope.userId = storage.get("user_id");
     currentUser = Restangular.one("users", $scope.userId);
     getRequest = currentUser.get({auth_token: storage.get("auth_token")});
@@ -38,5 +40,10 @@ onTapControllers.controller("vendorsController", [
       });
     };
 
+    $scope.signOut = function() {
+      sessionService.destroySession();
+      flash("Signed out successfully");
+      $navigate.go("/");
+    };
   }
 ]);

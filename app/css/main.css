@@ -68,6 +68,47 @@ em { font-style: italic; }
 
 /* Keyframes */
 /* Keyframe animations */
+/* Module Animations
+--------------------------------------------- */
+.slide-down { display: none; }
+.slide-down.ng-hide-remove { display: block; -webkit-animation: slide-down-enter 500ms 1 ease-out normal; -moz-animation: slide-down-enter 500ms 1 ease-out normal; -o-animation: slide-down-enter 500ms 1 ease-out normal; animation: slide-down-enter 500ms 1 ease-out normal; -webkit-animation: slide-up-leave 500ms 1 ease normal; -moz-animation: slide-up-leave 500ms 1 ease normal; -o-animation: slide-up-leave 500ms 1 ease normal; animation: slide-up-leave 500ms 1 ease normal; }
+
+@-webkit-keyframes slide-down-enter { from { opacity: 0; transform: translateY(-75%); }
+  to { opacity: 1; transform: translateY(0); } }
+
+@-moz-keyframes slide-down-enter { from { opacity: 0; transform: translateY(-75%); }
+  to { opacity: 1; transform: translateY(0); } }
+
+@-ms-keyframes slide-down-enter { from { opacity: 0; transform: translateY(-75%); }
+  to { opacity: 1; transform: translateY(0); } }
+
+@keyframes slide-down-enter { from { opacity: 0; transform: translateY(-75%); }
+  to { opacity: 1; transform: translateY(0); } }
+
+@-webkit-keyframes slide-up-leave { from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-75%); } }
+
+@-moz-keyframes slide-up-leave { from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-75%); } }
+
+@-ms-keyframes slide-up-leave { from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-75%); } }
+
+@keyframes slide-up-leave { from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-75%); } }
+
+@-webkit-keyframes slide-down-leave { from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(75%); } }
+
+@-moz-keyframes slide-down-leave { from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(75%); } }
+
+@-ms-keyframes slide-down-leave { from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(75%); } }
+
+@keyframes slide-down-leave { from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(75%); } }
+
 /* ios 7 UI
 --------------------------------------------- */
 /* Base */

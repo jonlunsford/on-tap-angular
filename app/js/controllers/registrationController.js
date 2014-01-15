@@ -3,8 +3,9 @@ onTapControllers.controller("registrationController", [
   "Restangular",
   "$navigate",
   "storage",
+  "flash",
 
-  function registrationController($scope, Restangular, $navigate, storage) {
+  function registrationController($scope, Restangular, $navigate, storage, flash) {
     var baseRegistration = Restangular.all("users");
     
     $scope.userRoleId = storage.get("role_id");
@@ -12,6 +13,7 @@ onTapControllers.controller("registrationController", [
     
     navigateToUserAccount = function(userTypeId, userId) {
       var userPath = (userTypeId === 1 ? "vendors" : "users");
+      flash("Signed in successfully");
       $navigate.go(userPath + "/" + userId);
     };
     

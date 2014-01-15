@@ -1,4 +1,4 @@
-var onTapServices = angular.module("onTapServices", ["ngResource"]);
+var onTapServices = angular.module("onTapServices", []);
 
 onTapServices.factory("UserService", ["storage", function(storage) {
   var currentUser = {
@@ -11,14 +11,31 @@ onTapServices.factory("UserService", ["storage", function(storage) {
   return currentUser;
 }]);
 
-onTapServices.service("SessionService", function() {
-  var userIsAuthenticated = false;
-  
-  this.setUserAuthenticated = function(value) {
-    userIsAuthenticated = value;
-  };
+onTapServices.factory("sessionService", [
+  "storage",
 
-  this.getUserAuthenticated = function() {
-    return userIsAuthenticated;
-  };
-});
+  function(storage) {
+
+    this.destroySession = function() {
+      storage.remove("auth_token");
+      storage.remove("user_id");
+      storage.set("is_signed_in", false);
+    };
+
+    return this;
+  }
+]);
+
+onTapServices.factory("flashService", [
+
+  function() {
+
+    this.hideFlashes = function() {
+      setTimeout(function() {
+        $("#flash-messages").fadeOut(200);
+      }, 1000);
+    };
+
+    return this;
+  }
+]);
