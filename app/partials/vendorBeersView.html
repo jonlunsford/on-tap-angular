@@ -1,0 +1,19 @@
+<div class="content-panel" ng-controller="beersController">
+  
+  <div class="ui-navigation-bar fixed">
+    <div class="uin-navigation-bar_item center full">
+      <button ng-tap="$navigate.back()" class="navigation-back"><i class="fa fa-angle-left"></i> Back</button>
+      <h1 class="ui-navigation-bar_title">Beer</h1>
+      <button ng-tap="$navigate.go('/search')" class="navigation-add">+</button>
+    </div>
+  </div>
+
+  <li class="topcoat-list__item" ng-repeat="beer in beers" ng-tap="$navigate.go('/beers/{{beer.id}}', 'slide')">
+    <h2>{{beer.name}}</h2>
+    <ul class="inline-list">
+      <li><span class="small">ABV</span> {{beer.abv}}</li>
+      <li><span class="small">IBU</span> {{beer.ibu}}</li>
+    </ul>
+    <p>{{beer.description}}</p>
+  </li>
+</div>

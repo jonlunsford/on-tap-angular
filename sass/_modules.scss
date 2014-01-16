@@ -45,18 +45,28 @@ $info-color: #606366;
     line-height: 3.7rem;
   }
 
-  .navigation-back {
-    position: absolute;
-    left: 10px;
-    top: 16px;
+  .navigation-back,
+  .navigation-add {
     color: $highlight-color;
-    font-size: 15px;
     background: none;
+    position: absolute;
 
     i {
       font-weight: bold;
       font-size: 18px;
     }
+  }
+
+  .navigation-back {
+    font-size: 15px;
+    left: 10px;
+    top: 16px;
+  }
+
+  .navigation-add {
+    font-size: 24px;
+    right: 10px;
+    top: 10px;
   }
 }
 

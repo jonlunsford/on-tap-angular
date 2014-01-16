@@ -25,7 +25,7 @@
   </div><!-- .ui-masthead -->
 
   <div class="ui-stats-row">
-    <div class="ui-stat_button">
+    <div ng-tap="$navigate.go('/vendors/{{userId}}/beers')" class="ui-stat_button">
       <span class="stat-number">20</span>
       <p class="stat-item">Beers</p>
     </div><!-- .ui-stat_button -->
@@ -37,17 +37,17 @@
   </div><!-- .ui-stat-row -->
 
   <ul class="ui-action-list">
-    <li ng-click="$navigate.go('/vendors/{{userId}}/edit')">
+    <li ng-tap="$navigate.go('/vendors/{{userId}}/edit')">
       <i class="fa fa-user action-list-icon"></i>
       <h3>Edit Profile</h3>
       <i class="fa fa-angle-right"></i>
     </li>
-    <li>
+    <li ng-tap="$navigate.go('/vendors/{{userId}}/settings')">
       <i class="fa fa-cog action-list-icon"></i>
       <h3>Settings</h3>
       <i class="fa fa-angle-right"></i>
     </li>
-    <li>
+    <li ng-tap="$navigate.go('/vendors/{{userId}}/help')">
       <i class="fa fa-question-circle action-list-icon"></i>
       <h3>Help</h3>
       <i class="fa fa-angle-right"></i>

@@ -117,8 +117,10 @@ em { font-style: italic; }
 /* Navigation Bars */
 .ui-navigation-bar { height: 60px; position: relative; background: #f8f8f8; border-bottom: 1px solid #ececef; }
 .ui-navigation-bar .ui-navigation-bar_title { margin: 0; line-height: 3.7rem; }
-.ui-navigation-bar .navigation-back { position: absolute; left: 10px; top: 16px; color: #157efb; font-size: 15px; background: none; }
-.ui-navigation-bar .navigation-back i { font-weight: bold; font-size: 18px; }
+.ui-navigation-bar .navigation-back, .ui-navigation-bar .navigation-add { color: #157efb; background: none; position: absolute; }
+.ui-navigation-bar .navigation-back i, .ui-navigation-bar .navigation-add i { font-weight: bold; font-size: 18px; }
+.ui-navigation-bar .navigation-back { font-size: 15px; left: 10px; top: 16px; }
+.ui-navigation-bar .navigation-add { font-size: 24px; right: 10px; top: 10px; }
 
 /* Form fields */
 .control-group { position: relative; margin-bottom: 15px; }
