@@ -8,6 +8,7 @@ onTapControllers.controller("vendorsController", [
 
   function vendorsController($scope, Restangular, storage, flash, sessionService, $navigate) {
     $scope.userId = storage.get("user_id");
+    $scope.$navigate = $navigate;
     currentUser = Restangular.one("users", $scope.userId);
     getRequest = currentUser.get({auth_token: storage.get("auth_token")});
 
