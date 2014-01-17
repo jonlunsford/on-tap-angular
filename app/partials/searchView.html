@@ -11,28 +11,27 @@
     <div class="ui-search_group">
       <i class="fa fa-search-plus"></i>
       <input type="search" value="" placeholder="Search" class="ui-search_field" ng-model="searchTerm">
+      <i class="fa fa-refresh fa-spin" ng-show="isSearching"></i>
     </div>
   </div>
 
-      <!-- <i class="fa fa-refresh fa-spin" ng-show="isSearching"></i> -->
+  <ul class="ui-info-list">
+    <li class="ui-info-list_item" ng-repeat="result in searchResults" ng-tap="getResource(result.type, result.id)">
+      
+      <div class="ui-round-image">
+        <img ng-if="result.images.icon" src="{{result.images.icon}}" alt="{{result.name}}" class="image-rounded_large">
+        <img ng-if="result.labels.icon" src="{{result.labels.icon}}" alt="{{result.name}}" class="image-rounded_large">
+        <img ng-if="!result.images.icon && !result.labels.icon" src="http://placehold.it/75x75/57e6e7/ffffff" alt="{{result.name}}" class="image-rounded_large">
+      </div>
+      
+      <div class="ui-info-list_content">
+        <h3>{{result.name | truncate:25}}</h3>
+        <ul ng-if="result.abv || result.ibu" class="inline-list">
+          <li ng-if="result.abv" class="small">ABV {{result.abv}}</li>
+          <li ng-if="result.ibu" class="small">IBU {{result.ibu}}</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
 
-    <ul class="topcoat-list__container">
-      <li class="topcoat-list__item" ng-repeat="result in searchResults">
-        
-        <div ng-if="result.type === 'brewery'">
-          <a ng-tap="$navigate.go('/breweries/{{result.id}}/beers', 'slide')">
-            <h2>{{result.name}}</h2>
-            <p>{{result.description|truncate:120}}</p>
-          </a>
-        </div>
-
-        <div ng-if="result.type === 'beer'">
-          <a ng-tap="$navigate.go('/beer/{{result.id}}', 'slide')">
-            <h2>{{result.name}}</h2>
-            <p>{{result.description|truncate:120}}</p>
-          </a>
-        </div>
-
-      </li>
-    </ul>
 </div>

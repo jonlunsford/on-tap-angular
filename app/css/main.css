@@ -138,7 +138,7 @@ em { font-style: italic; }
 
 /* Navigation Bars */
 .ui-navigation-bar { height: 60px; position: relative; background: #f8f8f8; border-bottom: 1px solid #ececef; }
-.ui-navigation-bar.fixed { position: fixed; width: 100%; left: 0; top: 0; }
+.ui-navigation-bar.fixed { position: fixed; width: 100%; z-index: 2; left: 0; top: 0; }
 .ui-navigation-bar .ui-navigation-bar_title { margin: 0; line-height: 3.7rem; }
 .ui-navigation-bar .navigation-back, .ui-navigation-bar .navigation-add { color: #157efb; background: none; position: absolute; }
 .ui-navigation-bar .navigation-back i, .ui-navigation-bar .navigation-add i { font-weight: bold; font-size: 18px; }
@@ -223,7 +223,9 @@ input.error, textarea.error, button.error { border-top: 1px solid red; border-bo
 .ui-search { width: 100%; position: relative; padding: 10px 15px; background: #f8f8f8; border-bottom: 1px solid #ececef; }
 
 .ui-search_group { position: relative; }
-.ui-search_group i { position: absolute; color: #C5C5C5; top: 11px; left: 5px; }
+.ui-search_group i { position: absolute; color: #C5C5C5; top: 11px; }
+.ui-search_group i.fa-search-plus { left: 5px; }
+.ui-search_group i.fa-refresh { right: 5px; }
 
 .ui-search_field { width: 100%; border-radius: 4px; padding: 10px 10px 10px 22px; }
 

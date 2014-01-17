@@ -13,7 +13,7 @@ var onTap = angular.module("onTap", [
 ]);
 
 onTap.config(["$routeProvider", "RestangularProvider", function($routeProvider, RestangularProvider) {
-  RestangularProvider.setBaseUrl("http://192.168.1.4:3000/api/v1");
+  RestangularProvider.setBaseUrl("http://0.0.0:3000/api/v1");
 
   $routeProvider
   .when("/", {templateUrl: "../partials/registrationView.html", controller: "registrationController"})
@@ -25,9 +25,9 @@ onTap.config(["$routeProvider", "RestangularProvider", function($routeProvider, 
   .when("/vendors/:id/help", {templateUrl: "../partials/vendorHelpView.html", controller: "vendorsController"})
   .when("/users/:id", {templateUrl: "../partials/userView.html", controller: "usersController"})
   .when("/search", {templateUrl: "../partials/searchView.html", controller: "searchController"})
-  .when("/beers", {templateUrl: "../partials/beersListView.html", controller: "beersListController"})
-  .when("/breweries/:beerdb_id/beers", {templateUrl: "../partials/beersListView.html", controller: "beersListController"})
-  .when("/beers/:id", {templateUrl: "../partials/beersDetailView.html", controller: "beersListController"})
+  .when("/search/beer/:brewerydb_id", {templateUrl: "../partials/searchResultView.html", controller: "searchController"})
+  .when("/search/brewery/:brewerydb_id", {templateUrl: "../partials/searchResultView.html", controller: "searchController"})
+  .when("/search/brewery/:brewerydb_id/beers", {templateUrl: "../partials/searchView.html", controller: "searchController"})
   .otherwise({redirectTo: "/"});
 }]);
 
