@@ -1,19 +1,31 @@
 <div class="content-panel" ng-controller="beersController">
   
   <div class="ui-navigation-bar fixed">
-    <div class="uin-navigation-bar_item center full">
+    <div class="ui-navigation-bar_item center full">
       <button ng-tap="$navigate.back()" class="navigation-back"><i class="fa fa-angle-left"></i> Back</button>
       <h1 class="ui-navigation-bar_title">Beer</h1>
-      <button ng-tap="$navigate.go('/search')" class="navigation-add">+</button>
+      <button ng-tap="$navigate.go('/search', 'modal')" class="navigation-add">+</button>
     </div>
   </div>
+  
+  <ul class="ui-info-list">
+    <li class="ui-info-list_item" ng-repeat="beer in beers" ng-tap="$navigate.go('/vendors/{{userId}}/beers/{{beer.id}}')">
+      
+      <div class="ui-round-image">
+        <img src="http://placehold.it/45x45/57e6e7/ffffff" alt="{{beer.name}}" class="image-rounded_medium">
+      </div>
+      
+      <div class="ui-info-list_content">
+        <h3>{{beer.name}}</h3>
+        <ul class="inline-list">
+          <li class="small">ABV {{beer.abv}}</li>
+          <li class="small">IBU {{beer.ibu}}</li>
+        </ul>
+      </div>
 
-  <li class="topcoat-list__item" ng-repeat="beer in beers" ng-tap="$navigate.go('/beers/{{beer.id}}', 'slide')">
-    <h2>{{beer.name}}</h2>
-    <ul class="inline-list">
-      <li><span class="small">ABV</span> {{beer.abv}}</li>
-      <li><span class="small">IBU</span> {{beer.ibu}}</li>
-    </ul>
-    <p>{{beer.description}}</p>
-  </li>
+      <div class="ui-info-list_icon">
+        <i class="fa" ng-class="{true: 'fa-check-circle', false: 'fa-times-circle'}[{{beer.on_tap}}]"></i>
+      </div>
+    </li>
+  </ul>
 </div>

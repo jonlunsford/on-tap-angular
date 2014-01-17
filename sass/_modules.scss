@@ -40,6 +40,14 @@ $info-color: #606366;
   background: $header-bg-color;
   border-bottom: 1px solid $border-color;
 
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+  }
+
   .ui-navigation-bar_title {
     margin: 0;
     line-height: 3.7rem;
@@ -325,6 +333,90 @@ button {
   margin: 0 15px 0 20px;
 }
 
+/* Info list */
+
+.ui-info-list {
+
+  .ui-info-list_item {
+    overflow: hidden;
+    background: #fff;
+    border-bottom: 1px solid $light-border-color;
+    position: relative;
+    padding: 15px;
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+      background: adjust-lightness(#fff, -3%);
+    } 
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .ui-round-image {
+    float: left;
+    margin-right: 15px;
+  }
+
+  .ui-info-list_content {
+    float: left;
+    padding-top: 3px;
+  }
+
+  .ui-info-list_icon {
+    float: right;
+    margin-top: 12px;
+    font-size: 20px;
+  }
+
+  .fa-times-circle {
+    color: #D6D6D6;    
+  }
+
+  .fa-check-circle {
+    color: $secondary-highlight-color;
+  }
+}
+
+.ui-basic-info-list {
+  font-size: 14px;
+
+  li {
+    padding: 0 0 5px 0;
+    margin: 0 0 5px 0;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+/* Search Module */
+
+.ui-search {
+  width: 100%;
+  position: relative;
+  padding: 10px 15px;
+  background: $header-bg-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.ui-search_group {
+  position: relative;
+
+  i {
+    position: absolute;
+    color: #C5C5C5;
+    top: 11px;
+    left: 5px;
+  }
+}
+
+.ui-search_field {
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px 10px 10px 22px;
+}
+
 /* Misc */
 
 .ui-masthead {
@@ -346,6 +438,10 @@ button {
 
 .image-rounded_large {
   border-radius: 40px;
+}
+
+.image-rounded_medium {
+  border-radius: 30px;
 }
 
 .ui-round-image_large {

@@ -1,0 +1,54 @@
+<div class="content-panel" ng-controller="beersController">
+  
+  <div class="ui-navigation-bar fixed">
+    <div class="ui-navigation-bar_item center full">
+      <button ng-tap="$navigate.back()" class="navigation-back"><i class="fa fa-angle-left"></i> Back</button>
+      <h1 class="ui-navigation-bar_title">{{beer.name}}</h1>
+    </div>
+  </div>
+  
+  <div class="ui-masthead user-profil-header">
+    <div class="masthead-left_small">
+      <div class="ui-round-image">
+        <img ng-if="beer.labels.icon !== '' " src="{{beer.labels.icon}}" alt="{{beer.name}}" class="image-rounded_large">
+        <img ng-if="beer.labels.icon == '' " src="http://placehold.it/75x75/57e6e7/ffffff" alt="{{beer.name}}" class="image-rounded_large">
+      </div>
+    </div><!-- .mastheader-left_small -->
+
+    <div class="masthead-right_large">
+      <h2 class="profile-name">{{beer.name}}</h2>
+      <p ng-if="beer.style.name" class="muted">{{beer.style.name | truncate:25}}</p>
+      <ul class="inline-list">
+        <li ng-if="beer.abv" class="small">ABV {{beer.abv}}</li>
+        <li ng-if="beer.ibu"class="small">IBU {{beer.ibu}}</li>
+      </ul>
+      <ul class="ui-stat-list small">
+        <li>
+          <strong>186</strong> followers
+        </li>
+      </ul>
+    </div><!-- masthead-right_large -->
+  </div><!-- .ui-masthead -->
+
+  <div class="content-section">
+    <button class="ui-button--cta full" ng-tap="signIn({email: email, password: password})">Follow</button>
+    <p>{{beer.description}}</p>
+
+    <div ng-if="beer.style" class="content-extended-section">
+      <h3>More About: {{beer.style.name}}</h3>
+      <p>{{beer.style.description}}</p>
+      <h3>Specs:</h3>
+      <ul class="ui-basic-info-list">
+        <li ng-if="beer.style.category" class="ui-basic-info-list_item"><strong>Category:</strong> {{beer.style.category.name}}</li>
+        <li class="ui-basic-info-list_item"><strong>Max ABV:</strong> {{beer.style.abv_max}}</li>
+        <li class="ui-basic-info-list_item"><strong>Min ABV:</strong> {{beer.style.abv_min}}</li>
+        <li class="ui-basic-info-list_item"><strong>Max IBU:</strong> {{beer.style.ibu_max}}</li>
+        <li class="ui-basic-info-list_item"><strong>Min IBU:</strong> {{beer.style.ibu_min}}</li>
+        <li class="ui-basic-info-list_item"><strong>Max SRM:</strong> {{beer.style.srm_max}}</li>
+        <li class="ui-basic-info-list_item"><strong>Min SRM:</strong> {{beer.style.srm_min}}</li>
+        <li class="ui-basic-info-list_item"><strong>Max Final Gravity:</strong> {{beer.style.fg_max}}</li>
+        <li class="ui-basic-info-list_item"><strong>Min Final Gravity:</strong> {{beer.style.fg_min}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

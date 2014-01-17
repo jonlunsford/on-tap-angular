@@ -39,7 +39,9 @@ h1 {
 h2 {
   font-size: 32px;
 }
-h3 {}
+h3 {
+  font-size: 18px;
+}
 h4 {}
 h5 {}
 
@@ -53,6 +55,7 @@ a {
 
 p, ol, ul {
   margin-bottom: 15px;
+  line-height: 24px;
 }
 
 p {}

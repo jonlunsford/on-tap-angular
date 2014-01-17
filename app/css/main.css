@@ -40,9 +40,11 @@ h1 { font-size: 18px; }
 
 h2 { font-size: 32px; }
 
+h3 { font-size: 18px; }
+
 a { color: #4fc3d4; text-decoration: none; }
 
-p, ol, ul { margin-bottom: 15px; }
+p, ol, ul { margin-bottom: 15px; line-height: 24px; }
 
 strong { font-weight: bold; }
 
@@ -53,6 +55,14 @@ em { font-style: italic; }
 .hide-text { border: 0; font: 0/0 a; text-shadow: none; color: transparent; background-color: transparent; }
 
 .small { font-size: 10px; }
+
+.muted { margin: 0; }
+
+.info-content { margin-top: 15px; }
+
+.inline-list { overflow: hidden; margin: 0; }
+.inline-list li { border-right: 1px solid #ececef; float: left; padding: 0 5px 0 0; margin: 0 5px 0 0; }
+.inline-list li:last-child { border-right: none; margin: 0; padding: 0; }
 
 /* Responsive Mixins see: http://jakearchibald.github.com/sass-ie
 ------------------------------------------------ */
@@ -68,6 +78,18 @@ em { font-style: italic; }
 
 /* Keyframes */
 /* Keyframe animations */
+/* Angular Animations
+--------------------------------------------- */
+.view-enter, .view-leave, .slide-enter, .slide-leave, .wave-enter, .wave-leave { -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; }
+
+.view-enter { opacity: 0; left: 100px; width: 100%; position: absolute; }
+
+.view-enter.view-enter-active { left: 0; opacity: 1; }
+
+.view-leave { position: absolute; left: 0; width: 100%; opacity: 1; }
+
+.view-leave.view-leave-active { left: -100px; opacity: 0; }
+
 /* Module Animations
 --------------------------------------------- */
 .slide-down { display: none; }
@@ -116,6 +138,7 @@ em { font-style: italic; }
 
 /* Navigation Bars */
 .ui-navigation-bar { height: 60px; position: relative; background: #f8f8f8; border-bottom: 1px solid #ececef; }
+.ui-navigation-bar.fixed { position: fixed; width: 100%; left: 0; top: 0; }
 .ui-navigation-bar .ui-navigation-bar_title { margin: 0; line-height: 3.7rem; }
 .ui-navigation-bar .navigation-back, .ui-navigation-bar .navigation-add { color: #157efb; background: none; position: absolute; }
 .ui-navigation-bar .navigation-back i, .ui-navigation-bar .navigation-add i { font-weight: bold; font-size: 18px; }
@@ -183,6 +206,27 @@ input.error, textarea.error, button.error { border-top: 1px solid red; border-bo
 
 .action-list-icon { float: left; margin: 0 15px 0 20px; }
 
+/* Info list */
+.ui-info-list .ui-info-list_item { overflow: hidden; background: #fff; border-bottom: 1px solid #ececef; position: relative; padding: 15px; }
+.ui-info-list .ui-info-list_item:hover, .ui-info-list .ui-info-list_item:active { cursor: pointer; background: #f7f7f7; }
+.ui-info-list .ui-info-list_item h3 { margin: 0; }
+.ui-info-list .ui-round-image { float: left; margin-right: 15px; }
+.ui-info-list .ui-info-list_content { float: left; padding-top: 3px; }
+.ui-info-list .ui-info-list_icon { float: right; margin-top: 12px; font-size: 20px; }
+.ui-info-list .fa-times-circle { color: #D6D6D6; }
+.ui-info-list .fa-check-circle { color: #4fc3d4; }
+
+.ui-basic-info-list { font-size: 14px; }
+.ui-basic-info-list li { padding: 0 0 5px 0; margin: 0 0 5px 0; border-bottom: 1px solid #ccc; }
+
+/* Search Module */
+.ui-search { width: 100%; position: relative; padding: 10px 15px; background: #f8f8f8; border-bottom: 1px solid #ececef; }
+
+.ui-search_group { position: relative; }
+.ui-search_group i { position: absolute; color: #C5C5C5; top: 11px; left: 5px; }
+
+.ui-search_field { width: 100%; border-radius: 4px; padding: 10px 10px 10px 22px; }
+
 /* Misc */
 .ui-masthead { overflow: hidden; padding: 40px 20px; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f0fbfd), color-stop(100%, #f2f4f4)); background-image: -webkit-linear-gradient(#f0fbfd, #f2f4f4); background-image: -moz-linear-gradient(#f0fbfd, #f2f4f4); background-image: -o-linear-gradient(#f0fbfd, #f2f4f4); background-image: linear-gradient(#f0fbfd, #f2f4f4); }
 
@@ -192,6 +236,8 @@ input.error, textarea.error, button.error { border-top: 1px solid red; border-bo
 
 /* Utilities */
 .image-rounded_large { border-radius: 40px; }
+
+.image-rounded_medium { border-radius: 30px; }
 
 .ui-round-image_large { overflow: hidden; }
 
@@ -1170,8 +1216,12 @@ input.error, textarea.error, button.error { border-top: 1px solid red; border-bo
 
 .ng-hide-remove { display: block !important; }
 
-.content-panel { *zoom: 1; padding-left: 0px; padding-right: 0px; margin-left: auto; margin-right: auto; padding: 0 0 30px 0; }
+.mb-page { background: #EFEFF6; }
+
+.content-panel { *zoom: 1; padding-left: 0px; padding-right: 0px; margin-left: auto; margin-right: auto; padding: 60px 0 30px 0; background: #EFEFF6; }
 .content-panel:after { content: ""; display: table; clear: both; }
+
+.content-section { padding: 15px; }
 
 .inner-content { position: relative; overflow: hidden; padding: 0 15px; }
 

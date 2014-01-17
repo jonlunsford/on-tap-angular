@@ -14,6 +14,7 @@ onTapControllers.controller("registrationController", [
     navigateToUserAccount = function(userTypeId, userId) {
       var userPath = (userTypeId === 1 ? "vendors" : "users");
       flash("Signed in successfully");
+      $navigate.eraseHistory();
       $navigate.go(userPath + "/" + userId);
     };
     

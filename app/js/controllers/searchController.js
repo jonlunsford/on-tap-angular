@@ -1,10 +1,10 @@
-onTapControllers.controller("searchController", [ 
+onTapControllers.controller("searchController", [
   "$scope", 
-  "$routeParams", 
-  "Search",
+  "$routeParams",
   "Restangular",
+  "$navigate",
 
-  function searchController($scope, $routeParams, Search, Restangular) {
+  function searchController($scope, $routeParams, Restangularm, $navigate) {
   
     $scope.$watch("searchTerm", function(searchString) {
       $scope.isSearching = true;

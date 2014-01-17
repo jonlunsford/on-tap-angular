@@ -25,6 +25,31 @@ General CSS utilities and SASS mixins
   font-size: 10px;
 }
 
+.muted {
+  margin: 0;
+}
+
+.info-content {
+  margin-top: 15px;
+}
+
+.inline-list {
+  overflow: hidden;
+  margin: 0;
+
+  li {
+    border-right: 1px solid #ececef;
+    float: left;
+    padding: 0 5px 0 0;
+    margin: 0 5px 0 0;
+
+    &:last-child {
+      border-right: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
 
 /* Responsive Mixins
    see: http://jakearchibald.github.com/sass-ie
@@ -106,6 +131,37 @@ $old-ie: false !default;
   animation:         #{$name} #{$duration} #{$repetition} #{$timing} #{$direction};
 }
 
+/* Angular Animations
+--------------------------------------------- */
+
+.view-enter, .view-leave, .slide-enter, .slide-leave, .wave-enter, .wave-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.view-enter {
+  opacity:0;
+  left:100px;
+  width:100%;
+  position:absolute;
+}
+.view-enter.view-enter-active {
+  left:0;
+  opacity:1;
+}
+
+.view-leave {
+  position:absolute;
+  left:0;
+  width:100%;
+  opacity:1;
+}
+.view-leave.view-leave-active {
+  left:-100px;
+  opacity:0;
+}
 
 /* Module Animations
 --------------------------------------------- */

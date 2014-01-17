@@ -1,44 +1,38 @@
-<div class="topcoat-navigation-bar">
-  <div class="topcoat-navigation-bar__item center full">
-    <h1 class="topcoat-navigation-bar__title">Search For Beer</h1>
-  </div>
-</div>
-
-<div ng-controller="searchController" class="list-view">
-
-  <div class="inner-content">
-    <input type="search" value="" placeholder="Type a brewery or beer name" class="topcoat-search-input main-input" ng-model="searchTerm">
-    <i class="fa fa-refresh fa-spin" ng-show="isSearching"></i>
+<div class="content-panel" ng-controller="searchController">
+  
+  <div class="ui-navigation-bar fixed">
+    <div class="ui-navigation-bar_item center full">
+      <button ng-tap="$navigate.back()" class="navigation-back">Done</button>
+      <h1 class="ui-navigation-bar_title">Add Beer</h1>
+    </div>
   </div>
 
-  <ul class="topcoat-list__container">
-    <li class="topcoat-list__item" ng-repeat="result in searchResults">
-      
-      <div ng-if="result.type === 'brewery'">
-        <a ng-tap="$navigate.go('/breweries/{{result.id}}/beers', 'slide')">
-          <h2>{{result.name}}</h2>
-          <p>{{result.description|truncate:120}}</p>
-        </a>
-      </div>
+  <div class="ui-search">
+    <div class="ui-search_group">
+      <i class="fa fa-search-plus"></i>
+      <input type="search" value="" placeholder="Search" class="ui-search_field" ng-model="searchTerm">
+    </div>
+  </div>
 
-      <div ng-if="result.type === 'beer'">
-        <a ng-tap="$navigate.go('/beer/{{result.id}}', 'slide')">
-          <h2>{{result.name}}</h2>
-          <p>{{result.description|truncate:120}}</p>
-        </a>
-      </div>
+      <!-- <i class="fa fa-refresh fa-spin" ng-show="isSearching"></i> -->
 
-    </li>
-  </ul>
-</div>
+    <ul class="topcoat-list__container">
+      <li class="topcoat-list__item" ng-repeat="result in searchResults">
+        
+        <div ng-if="result.type === 'brewery'">
+          <a ng-tap="$navigate.go('/breweries/{{result.id}}/beers', 'slide')">
+            <h2>{{result.name}}</h2>
+            <p>{{result.description|truncate:120}}</p>
+          </a>
+        </div>
 
-<div class="topcoat-tab-bar">
-  <label class="topcoat-tab-bar__item">
-    <input type="radio" name="tab-bar">
-    <button class="topcoat-tab-bar__button" ng-tap="$navigate.go('/beers', 'slide')">Beers</button>
-  </label>
-  <label class="topcoat-tab-bar__item">
-    <input type="radio" name="tab-bar">
-    <button class="topcoat-tab-bar__button" ng-tap="$navigate.go('/search', 'slide')">Search</button>
-  </label>
+        <div ng-if="result.type === 'beer'">
+          <a ng-tap="$navigate.go('/beer/{{result.id}}', 'slide')">
+            <h2>{{result.name}}</h2>
+            <p>{{result.description|truncate:120}}</p>
+          </a>
+        </div>
+
+      </li>
+    </ul>
 </div>
