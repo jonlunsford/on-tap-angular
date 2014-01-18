@@ -29,6 +29,10 @@ General CSS utilities and SASS mixins
   margin: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 .info-content {
   margin-top: 15px;
 }

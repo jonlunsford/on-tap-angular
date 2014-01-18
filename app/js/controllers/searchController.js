@@ -3,11 +3,15 @@ onTapControllers.controller("searchController", [
   "$routeParams",
   "Restangular",
   "$navigate",
+  "storage",
 
-  function searchController($scope, $routeParams, Restangular, $navigate) {
+  function searchController($scope, $routeParams, Restangular, $navigate, storage) {
     $scope.isSearching = false;
+    $scope.$navigate = $navigate;
+    $scope.isSearchView = true;
 
     $scope.$watch("searchTerm", function(searchString) {
+      console.log("HELLO")
 
       setTimeout(function() {
         if(searchString === $scope.searchTerm && searchString !== "" && typeof searchString !== "undefined") {
@@ -22,18 +26,27 @@ onTapControllers.controller("searchController", [
     });
 
     $scope.getResource = function(type, id) {
-      $scope.type = typeof type === "undefined" ? "beers" : type;
+      $scope.type = typeof type === "undefined" ? "beer" : type;
       $scope.brewerydb_id = id;
 
       getRequest = Restangular.one("search").one($scope.type, id).get();
       getRequest.then(function(result) {
+
+        if($scope.type === "brewery") {
+          storage.set("last_brewery_name", result.name);
+        } else {
+          storage.remove("last_brewery_name");
+        }
+
         $scope.result = result;
-        console.log($scope.result);
         $navigate.go('/search/' + $scope.type + '/' + id);
       });
     };
 
     $scope.getBreweryBeers = function(id) {
+      $scope.title = storage.get("last_brewery_name");
+      $scope.hiddenClass = "hidden";
+      $scope.isSearchView = false;
       getRequest = Restangular.one("search", "brewery").one(id, "beers").get();
       getRequest.then(function(results) {
         $scope.searchResults = results;

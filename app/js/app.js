@@ -1,9 +1,9 @@
 var onTap = angular.module("onTap", [
   "ngRoute",
-  "ngAnimate",
   "ngResource",
   "filters",
   "ajoslin.mobile-navigate",
+  "ngAnimate",
   "ngMobile",
   "onTapControllers",
   "onTapServices",
@@ -11,9 +11,8 @@ var onTap = angular.module("onTap", [
   "angularLocalStorage",
   "flash"
 ]);
-
 onTap.config(["$routeProvider", "RestangularProvider", function($routeProvider, RestangularProvider) {
-  RestangularProvider.setBaseUrl("http://0.0.0:3000/api/v1");
+  RestangularProvider.setBaseUrl("http://192.168.1.4:3000/api/v1");
 
   $routeProvider
   .when("/", {templateUrl: "../partials/registrationView.html", controller: "registrationController"})

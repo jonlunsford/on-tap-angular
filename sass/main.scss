@@ -114,3 +114,8 @@ GLOBAL LAYOUT
     color: $base-color;
   }
 }
+
+/* comment
+--------------------------------------------- */
+
+.ui-info-list_item.guild { display: none;} // Until these are filtered out from the API

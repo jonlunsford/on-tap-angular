@@ -58,6 +58,8 @@ em { font-style: italic; }
 
 .muted { margin: 0; }
 
+.hidden { display: none; }
+
 .info-content { margin-top: 15px; }
 
 .inline-list { overflow: hidden; margin: 0; }
@@ -1239,3 +1241,7 @@ input.error, textarea.error, button.error { border-top: 1px solid red; border-bo
 
 .profile-footer { bottom: 20px; left: 20px; }
 .profile-footer a, .profile-footer i { color: #606366; }
+
+/* comment
+--------------------------------------------- */
+.ui-info-list_item.guild { display: none; }

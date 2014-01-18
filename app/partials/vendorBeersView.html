@@ -17,9 +17,9 @@
       
       <div class="ui-info-list_content">
         <h3>{{beer.name}}</h3>
-        <ul class="inline-list">
-          <li class="small">ABV {{beer.abv}}</li>
-          <li class="small">IBU {{beer.ibu}}</li>
+        <ul ng-if="beer.abv || beer.ibu" class="inline-list">
+          <li ng-if="beer.abv" class="small">ABV {{beer.abv}}</li>
+          <li ng-if="beer.ibu" class="small">IBU {{beer.ibu}}</li>
         </ul>
       </div>
 
