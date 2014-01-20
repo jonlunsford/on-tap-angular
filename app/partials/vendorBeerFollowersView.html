@@ -1,0 +1,25 @@
+<div class="content-panel" ng-controller="vendorsController">
+  
+  <div class="ui-navigation-bar fixed">
+    <div class="ui-navigation-bar_item center full">
+      <button ng-tap="$navigate.back()" class="navigation-back"><i class="fa fa-angle-left"></i> Back</button>
+      <h1 class="ui-navigation-bar_title">Beer Followers</h1>
+    </div>
+  </div>
+  
+  <ul class="ui-info-list">
+    <li class="ui-info-list_item" ng-repeat="user in beerFollowers" ng-tap="$navigate.go('/users/{{user.id}}')">
+      
+      <div class="ui-round-image">
+        <img src="http://placehold.it/45x45/57e6e7/ffffff" alt="{{user.name}}" class="image-rounded_medium">
+      </div>
+      
+      <div class="ui-info-list_content">
+        <h3>{{user.name}}</h3>
+        <ul class="inline-list">
+          <li class="small">Followes some of your beers</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -23,8 +23,13 @@
     <form ng-submit="saveUserInfo()" name="user" class="user-form">
       <div class="ui-tab-pane tab-pane_general">
         <div class="control-group">
-          <input type="text" class="ui-text-input full-input" placeholder="Name:" ng-model="userName">
+          <input type="text" class="ui-text-input full-input" placeholder="Name:" ng-model="name">
           <label for="name" class="validation-error" ng-show="nameErrors"></label>
+        </div>
+
+        <div class="control-group">
+          <input type="text" class="ui-text-input full-input" placeholder="Username:" ng-model="userName">
+          <label for="name" class="validation-error" ng-show="userNameErrors"></label>
         </div>
 
         <div class="control-group">

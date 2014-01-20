@@ -15,10 +15,10 @@
 
     <div class="masthead-right_large">
       <h2 class="profile-name">{{user.name}}</h2>
-      <a href="@" class="social-link small">@addUserNameToModel</a>
+      <a href="@" class="social-link small">@{{userName}}</a>
       <ul class="ui-stat-list small">
         <li>
-          <strong>186</strong> followers
+          <strong>{{followerCount}}</strong> <ng-pluralize count="followerCount" when="{'0': 'followers', 'one': 'follower', 'other': 'followers'}"></ng-pluralize>
         </li>
       </ul>
     </div><!-- masthead-right_large -->
@@ -26,13 +26,13 @@
 
   <div class="ui-stats-row">
     <div ng-tap="$navigate.go('/vendors/{{userId}}/beers')" class="ui-stat_button">
-      <span class="stat-number">20</span>
-      <p class="stat-item">Beers</p>
+      <span class="stat-number">{{beerCount}}</span>
+      <p ng-pluralize count="beerCount" when="{'0': 'Beers On Tap', 'one': 'Beer On Tap', 'other': 'Beers On Tap'}" class="stat-item"></p>
     </div><!-- .ui-stat_button -->
 
-    <div class="ui-stat_button">
-      <span class="stat-number">180</span>
-      <p class="stat-item">Beer Subscribers</p>
+    <div ng-tap="$navigate.go('/vendors/{{userId}}/beer_followers')" class="ui-stat_button">
+      <span class="stat-number">{{beerFollowersCount}}</span>
+      <p ng-pluralize count="beerFollowersCount" when="{'0': 'Beer Subscribers', 'one': 'Beer Subscriber', 'other': 'Beer Subscribers'}" class="stat-item"></p>
     </div><!-- .ui-stat_button -->
   </div><!-- .ui-stat-row -->
 
